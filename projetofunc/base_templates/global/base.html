@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>{{ site_title }} MedFutura</title>
 </head>
 <body>
-    <h1>TEXTO ALEATORIO</h1>
+    <header class="header">
+        <h1 class="header-heading">
+            <a href="" class="header-link">
+                Funcionários MedFutura
+            </a>
+            </h1>
+            <nav class="menu">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="" class="menu-link">
+                            Link
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="" class="menu-link">
+                            Link 2
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="search">
+                <form action="{% url 'funcionarios:pesquisa' %}" method="get">
+                    <input type="text" class="search-input" placeholder="Pesquisa..." id="search" name="q" value="{{ valor_pesquisa }}">
+                </form>
+            </div>
+    </header>
+    <main class="content">
+        {% block content %} {% endblock content%}
+        {% include 'global/partials/_pagination.html' %}
+    </main>
 </body>
 </html>
