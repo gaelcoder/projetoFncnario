@@ -6,10 +6,10 @@ app_name = 'funcionarios'
 
 urlpatterns = [
     #crud
-    path('funcionario/<int:funcionariouni_id>/details/', views.funcionariouni, name='funcionariouni'),
-    path('funcionario/create', views.funcionariouni, name='funcionariouni'),
-    path('funcionario/<int:funcionariouni_id>/update/', views.funcionariouni, name='funcionariouni'),
-    path('funcionario/<int:funcionariouni_id>/delete/', views.funcionariouni, name='funcionariouni'),
+    path('funcionarios/<int:funcionariouni_id>/details/', views.funcionariouni, name='funcionariouni'),
+    path('funcionarios/create', views.create, name='create'),
+    path('funcionarios/<int:funcionariouni_id>/update/', views.funcionariouni, name='funcionariouni'),
+    path('funcionarios/<int:funcionariouni_id>/delete/', views.funcionariouni, name='funcionariouni'),
 
     path('pesquisa', views.pesquisa, name='pesquisa'),
     path('', views.index, name='index'),
